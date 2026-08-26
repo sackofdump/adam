@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Company {
+  id               String            @id @default(cuid())
+  name             String
+  slug             String            @unique
+  createdAt        DateTime          @default(now())
+  users            User[]
+  workflows        Workflow[]
+  knowledgeArticles KnowledgeArticle[]
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("EMPLOYEE")
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Workflow {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  authorId    String?
+  authorName  String?
+  companyId   String
+  company     Company  @relation(fields: [companyId], references: [id])
+  steps       Step[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Step {
+  id         String   @id @default(cuid())
+  title      String
+  content    String
+  order      Int
+  workflowId String
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+}
+
+model KnowledgeArticle {
+  id         String   @id @default(cuid())
+  title      String
+  content    String
+  category   String   @default("GENERAL")
+  authorId   String?
+  authorName String?
+  companyId  String
+  company    Company  @relation(fields: [companyId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
