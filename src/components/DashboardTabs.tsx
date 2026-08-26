@@ -75,14 +75,12 @@ export function DashboardTabs({ workflows, articles, role }: DashboardTabsProps)
           </button>
         </div>
 
-        {role === "ADMIN" && (
-          <Link
-            href={tab === "workflows" ? "/workflows/new" : "/articles/new"}
-            className="bg-orange-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-700 transition-colors text-sm"
-          >
-            {tab === "workflows" ? "+ New Workflow" : "+ New Article"}
-          </Link>
-        )}
+        <Link
+          href={tab === "workflows" ? "/workflows/new" : "/articles/new"}
+          className="bg-orange-500 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-600 transition-colors text-sm"
+        >
+          {tab === "workflows" ? "+ New Workflow" : "+ New Article"}
+        </Link>
       </div>
 
       {tab === "workflows" ? (

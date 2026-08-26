@@ -7,7 +7,6 @@ import { ArticleEditor } from "@/components/ArticleEditor";
 export default async function NewArticlePage() {
   const session = await getServerSession(authOptions);
   if (!session) redirect("/auth/signin");
-  if (session.user.role !== "ADMIN") redirect("/dashboard");
 
   return (
     <div className="min-h-screen flex flex-col">
