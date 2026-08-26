@@ -25,8 +25,8 @@ export default async function EditWorkflowPage({ params }: PageProps<"/workflows
       <main className="flex-1 py-10 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-gray-900">Edit workflow</h1>
-            <p className="text-gray-500 mt-1">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Edit workflow</h1>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">
               Update &ldquo;{workflow.title}&rdquo; and its steps
             </p>
           </div>

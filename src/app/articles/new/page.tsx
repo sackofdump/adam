@@ -14,8 +14,8 @@ export default async function NewArticlePage() {
       <main className="flex-1 py-10 px-4">
         <div className="max-w-3xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-gray-900">New Knowledge Article</h1>
-            <p className="text-gray-500 mt-1">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">New Knowledge Article</h1>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">
               Capture what you know — decisions, processes, contacts, and gotchas — so it stays with the team.
             </p>
           </div>

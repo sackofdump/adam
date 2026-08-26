@@ -25,10 +25,10 @@ export default async function WorkflowViewPage({ params }: PageProps<"/workflows
         <main className="flex-1 py-10 px-4">
           <div className="max-w-4xl mx-auto text-center py-20">
             <div className="text-5xl mb-4">📋</div>
-            <h2 className="text-xl font-semibold text-gray-700">
+            <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
               This workflow has no steps yet.
             </h2>
-            <p className="text-gray-400 mt-2">Ask an admin to add steps.</p>
+            <p className="text-gray-400 dark:text-gray-500 mt-2">Ask an admin to add steps.</p>
           </div>
         </main>
       </div>

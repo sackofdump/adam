@@ -71,11 +71,11 @@ export function ArticleEditor({
         </div>
       )}
 
-      <div className="bg-white rounded-2xl border border-gray-200 p-6 space-y-5">
-        <h2 className="font-semibold text-gray-900">Article details</h2>
+      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-5">
+        <h2 className="font-semibold text-gray-900 dark:text-white">Article details</h2>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
             Title <span className="text-red-500">*</span>
           </label>
           <input
@@ -83,13 +83,13 @@ export function ArticleEditor({
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-400"
+            className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 bg-white dark:bg-gray-700"
             placeholder="e.g. How to handle customer escalations"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
             Category
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -98,8 +98,8 @@ export function ArticleEditor({
                 key={cat.value}
                 className={`flex items-start gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
                   category === cat.value
-                    ? "border-orange-500 bg-orange-50"
-                    : "border-gray-200 hover:border-gray-300"
+                    ? "border-orange-500 bg-orange-50 dark:bg-orange-900/20"
+                    : "border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500"
                 }`}
               >
                 <input
@@ -111,8 +111,8 @@ export function ArticleEditor({
                   className="mt-0.5 accent-orange-600"
                 />
                 <div>
-                  <div className="text-sm font-medium text-gray-900">{cat.label}</div>
-                  <div className="text-xs text-gray-500">{cat.description}</div>
+                  <div className="text-sm font-medium text-gray-900 dark:text-white">{cat.label}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">{cat.description}</div>
                 </div>
               </label>
             ))}
@@ -120,11 +120,11 @@ export function ArticleEditor({
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl border border-gray-200 p-6">
-        <label className="block text-sm font-medium text-gray-700 mb-1.5">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
           Content <span className="text-red-500">*</span>
         </label>
-        <p className="text-xs text-gray-400 mb-3">
+        <p className="text-xs text-gray-400 dark:text-gray-500 mb-3">
           Write freely — include context, gotchas, examples, and any detail future team members would need.
         </p>
         <textarea
@@ -132,7 +132,7 @@ export function ArticleEditor({
           onChange={(e) => setContent(e.target.value)}
           required
           rows={16}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-400 resize-y font-mono text-sm leading-relaxed"
+          className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 resize-y font-mono text-sm leading-relaxed bg-white dark:bg-gray-700"
           placeholder="Share what you know. Include the 'why', not just the 'what'..."
         />
       </div>
@@ -141,7 +141,7 @@ export function ArticleEditor({
         <button
           type="button"
           onClick={() => router.back()}
-          className="px-6 py-2.5 text-gray-600 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
+          className="px-6 py-2.5 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
         >
           Cancel
         </button>

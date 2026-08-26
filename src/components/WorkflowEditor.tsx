@@ -111,13 +111,13 @@ export function WorkflowEditor({
       )}
 
       {/* Workflow details */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6 space-y-5">
-        <h2 className="font-semibold text-gray-900">Workflow details</h2>
+      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 space-y-5">
+        <h2 className="font-semibold text-gray-900 dark:text-white">Workflow details</h2>
 
         <div>
           <label
             htmlFor="title"
-            className="block text-sm font-medium text-gray-700 mb-1.5"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5"
           >
             Title <span className="text-red-500">*</span>
           </label>
@@ -127,7 +127,7 @@ export function WorkflowEditor({
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-400"
+            className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 bg-white dark:bg-gray-700"
             placeholder="e.g. New Employee Onboarding"
           />
         </div>
@@ -135,7 +135,7 @@ export function WorkflowEditor({
         <div>
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700 mb-1.5"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5"
           >
             Description <span className="text-gray-400 font-normal">(optional)</span>
           </label>
@@ -144,7 +144,7 @@ export function WorkflowEditor({
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={3}
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-400 resize-none"
+            className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 resize-none bg-white dark:bg-gray-700"
             placeholder="Brief description of what this workflow covers..."
           />
         </div>
@@ -153,7 +153,7 @@ export function WorkflowEditor({
       {/* Steps */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="font-semibold text-gray-900">
+          <h2 className="font-semibold text-gray-900 dark:text-white">
             Steps ({steps.length})
           </h2>
           <button
@@ -168,10 +168,10 @@ export function WorkflowEditor({
         {steps.map((step, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl border border-gray-200 p-6"
+            className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6"
           >
             <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-semibold text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
+              <span className="text-sm font-semibold text-orange-600 bg-orange-50 dark:bg-orange-900/20 px-3 py-1 rounded-full">
                 Step {index + 1}
               </span>
               <div className="flex items-center gap-2">
@@ -179,7 +179,7 @@ export function WorkflowEditor({
                   type="button"
                   onClick={() => moveStep(index, "up")}
                   disabled={index === 0}
-                  className="p-1.5 text-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed rounded"
+                  className="p-1.5 text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed rounded"
                   title="Move up"
                 >
                   ↑
@@ -188,7 +188,7 @@ export function WorkflowEditor({
                   type="button"
                   onClick={() => moveStep(index, "down")}
                   disabled={index === steps.length - 1}
-                  className="p-1.5 text-gray-400 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed rounded"
+                  className="p-1.5 text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed rounded"
                   title="Move down"
                 >
                   ↓
@@ -207,7 +207,7 @@ export function WorkflowEditor({
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
                   Step title <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -215,13 +215,13 @@ export function WorkflowEditor({
                   value={step.title}
                   onChange={(e) => updateStep(index, "title", e.target.value)}
                   required
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-400"
+                  className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 bg-white dark:bg-gray-700"
                   placeholder="e.g. Introduction to the team"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1.5">
                   Content <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -229,7 +229,7 @@ export function WorkflowEditor({
                   onChange={(e) => updateStep(index, "content", e.target.value)}
                   required
                   rows={5}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 placeholder-gray-400 resize-y"
+                  className="w-full px-4 py-2.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 resize-y bg-white dark:bg-gray-700"
                   placeholder="Explain what the employee needs to do or learn in this step..."
                 />
               </div>
@@ -240,7 +240,7 @@ export function WorkflowEditor({
         <button
           type="button"
           onClick={addStep}
-          className="w-full py-3 border-2 border-dashed border-gray-300 rounded-xl text-gray-400 text-sm font-medium hover:border-orange-300 hover:text-orange-500 transition-colors"
+          className="w-full py-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl text-gray-400 dark:text-gray-500 text-sm font-medium hover:border-orange-300 hover:text-orange-500 transition-colors"
         >
           + Add another step
         </button>
@@ -251,7 +251,7 @@ export function WorkflowEditor({
         <button
           type="button"
           onClick={() => router.back()}
-          className="px-6 py-2.5 text-gray-600 border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
+          className="px-6 py-2.5 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
         >
           Cancel
         </button>

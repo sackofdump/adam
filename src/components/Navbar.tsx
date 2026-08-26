@@ -4,12 +4,14 @@ import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTheme } from "@/components/ThemeProvider";
 
 export function Navbar() {
   const { data: session } = useSession();
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const router = useRouter();
+  const { theme, toggleTheme } = useTheme();
 
   const handleSignOut = async () => {
     setLoading(true);
@@ -58,6 +60,13 @@ export function Navbar() {
                   )}
                 </div>
                 <button
+                  onClick={toggleTheme}
+                  aria-label="Toggle dark mode"
+                  className="text-lg text-gray-400 hover:text-white transition-colors"
+                >
+                  {theme === "dark" ? "☀️" : "🌙"}
+                </button>
+                <button
                   onClick={handleSignOut}
                   disabled={loading}
                   className="text-sm text-gray-400 hover:text-white disabled:opacity-50"
@@ -67,6 +76,13 @@ export function Navbar() {
               </>
             ) : (
               <>
+                <button
+                  onClick={toggleTheme}
+                  aria-label="Toggle dark mode"
+                  className="text-lg text-gray-400 hover:text-white transition-colors"
+                >
+                  {theme === "dark" ? "☀️" : "🌙"}
+                </button>
                 <Link href="/auth/signin" className="text-sm text-gray-300 hover:text-white">
                   Sign in
                 </Link>

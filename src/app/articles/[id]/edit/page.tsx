@@ -28,8 +28,8 @@ export default async function EditArticlePage({
       <main className="flex-1 py-10 px-4">
         <div className="max-w-3xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-gray-900">Edit Article</h1>
-            <p className="text-gray-500 mt-1">{article.title}</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Edit Article</h1>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">{article.title}</p>
           </div>
           <ArticleEditor
             initialTitle={article.title}

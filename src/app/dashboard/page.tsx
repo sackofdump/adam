@@ -40,8 +40,8 @@ export default async function DashboardPage() {
       <main className="flex-1 py-10 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-gray-900">Knowledge Hub</h1>
-            <p className="text-gray-500 mt-1">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Knowledge Hub</h1>
+            <p className="text-gray-500 dark:text-gray-400 mt-1">
               {company?.name} &mdash; Workflows and knowledge captured for your team
             </p>
           </div>

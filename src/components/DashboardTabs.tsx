@@ -46,17 +46,17 @@ export function DashboardTabs({ workflows, articles, role }: DashboardTabsProps)
     <div>
       {/* Tab bar + action button */}
       <div className="flex items-center justify-between mb-6">
-        <div className="flex gap-1 bg-gray-100 p-1 rounded-xl">
+        <div className="flex gap-1 bg-gray-100 dark:bg-gray-700 p-1 rounded-xl">
           <button
             onClick={() => setTab("workflows")}
             className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
               tab === "workflows"
-                ? "bg-white text-gray-900 shadow-sm"
-                : "text-gray-500 hover:text-gray-700"
+                ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm"
+                : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
             }`}
           >
             Workflows
-            <span className="ml-2 text-xs font-semibold text-gray-400">
+            <span className="ml-2 text-xs font-semibold text-gray-400 dark:text-gray-500">
               {workflows.length}
             </span>
           </button>
@@ -64,12 +64,12 @@ export function DashboardTabs({ workflows, articles, role }: DashboardTabsProps)
             onClick={() => setTab("knowledge")}
             className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
               tab === "knowledge"
-                ? "bg-white text-gray-900 shadow-sm"
-                : "text-gray-500 hover:text-gray-700"
+                ? "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm"
+                : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
             }`}
           >
             Knowledge Base
-            <span className="ml-2 text-xs font-semibold text-gray-400">
+            <span className="ml-2 text-xs font-semibold text-gray-400 dark:text-gray-500">
               {articles.length}
             </span>
           </button>
