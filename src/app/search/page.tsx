@@ -93,22 +93,53 @@ function SearchResults() {
                     Workflows
                   </h2>
                   <div className="space-y-3">
-                    {workflows.map((w) => (
-                      <Link
-                        key={w.id}
-                        href={`/workflows/${w.id}`}
-                        className="block bg-white border border-gray-200 rounded-xl p-5 hover:border-orange-300 transition-colors"
-                      >
-                        <div className="font-semibold text-gray-900 mb-1">{w.title}</div>
-                        {w.description && (
-                          <p className="text-sm text-gray-500 line-clamp-1">{w.description}</p>
-                        )}
-                        <div className="flex items-center gap-3 mt-2 text-xs text-gray-400">
-                          <span>{w.steps.length} steps</span>
-                          {w.authorName && <span>by {w.authorName}</span>}
+                    {workflows.map((w) => {
+                      const q = initialQ.toLowerCase();
+                      const matchingSteps = w.steps.filter(
+                        (s) =>
+                          s.title.toLowerCase().includes(q) ||
+                          s.content.toLowerCase().includes(q)
+                      );
+                      return (
+                        <div key={w.id} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-orange-300 transition-colors">
+                          <Link href={`/workflows/${w.id}`} className="block p-5">
+                            <div className="font-semibold text-gray-900 mb-1">{w.title}</div>
+                            {w.description && (
+                              <p className="text-sm text-gray-500 line-clamp-1">{w.description}</p>
+                            )}
+                            <div className="flex items-center gap-3 mt-2 text-xs text-gray-400">
+                              <span>{w.steps.length} steps</span>
+                              {w.authorName && <span>by {w.authorName}</span>}
+                            </div>
+                          </Link>
+                          {matchingSteps.length > 0 && (
+                            <div className="border-t border-gray-100">
+                              {matchingSteps.map((s) => {
+                                const idx = s.content.toLowerCase().indexOf(q);
+                                const snippet = idx >= 0
+                                  ? s.content.slice(Math.max(0, idx - 40), idx + 120).trim()
+                                  : s.content.slice(0, 160).trim();
+                                return (
+                                  <Link
+                                    key={s.id}
+                                    href={`/workflows/${w.id}`}
+                                    className="flex items-start gap-3 px-5 py-3 bg-orange-50 hover:bg-orange-100 transition-colors border-b border-orange-100 last:border-0"
+                                  >
+                                    <span className="shrink-0 mt-0.5 text-xs font-bold text-orange-500 bg-white border border-orange-200 rounded-full w-5 h-5 flex items-center justify-center">
+                                      {s.order + 1}
+                                    </span>
+                                    <div>
+                                      <div className="text-xs font-semibold text-orange-700 mb-0.5">{s.title}</div>
+                                      <p className="text-xs text-gray-500 line-clamp-2">...{snippet}...</p>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
                         </div>
-                      </Link>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               )}
