@@ -69,10 +69,10 @@ export default function SignUpPage() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
             <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold">A</span>
+              <span className="text-white font-bold">V</span>
             </div>
             <span className="text-xl font-semibold text-gray-900">
-              ADAM
+              Village
             </span>
           </Link>
           <h1 className="text-2xl font-bold text-gray-900">

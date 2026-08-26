@@ -19,9 +19,9 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">K</span>
+              <span className="text-white font-bold text-sm">V</span>
             </div>
-            <span className="font-semibold text-white">ADAM</span>
+            <span className="font-semibold text-white">Village</span>
           </Link>
 
           <div className="flex items-center gap-4">

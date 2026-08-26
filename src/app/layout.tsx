@@ -9,7 +9,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "ADAM — Keep Your Knowledge Where It Belongs",
+  title: "Village — Keep Your Knowledge Where It Belongs",
   description: "Capture what your experienced team members know before it walks out the door. Workflows, knowledge articles, and expert attribution — built for small teams.",
 };
 

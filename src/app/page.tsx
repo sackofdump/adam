@@ -12,7 +12,7 @@ export default function HomePage() {
           <span className="text-orange-500">captured and kept</span>
         </h1>
         <p className="text-xl text-gray-500 mb-10 max-w-lg leading-relaxed">
-          When people leave, their knowledge doesn&apos;t have to. ADAM helps small
+          When people leave, their knowledge doesn&apos;t have to. Village helps small
           teams document workflows and know-how before it walks out the door.
         </p>
         <div className="flex gap-3 flex-wrap justify-center">
@@ -47,7 +47,7 @@ export default function HomePage() {
       </main>
 
       <footer className="py-6 px-4 text-center text-gray-400 text-sm border-t border-gray-100">
-        &copy; {new Date().getFullYear()} ADAM
+        &copy; {new Date().getFullYear()} Village
       </footer>
     </div>
   );
