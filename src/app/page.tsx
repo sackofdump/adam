@@ -17,16 +17,16 @@ export default function HomePage() {
         </p>
         <div className="flex gap-3 flex-wrap justify-center">
           <Link
-            href="/auth/signup"
+            href="/demo"
             className="bg-orange-500 text-white px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-orange-600 transition-colors"
           >
-            Get started free
+            Try the demo
           </Link>
           <Link
-            href="/auth/signin"
+            href="/auth/signup"
             className="bg-white text-gray-700 px-8 py-3.5 rounded-xl text-base font-semibold hover:bg-gray-50 transition-colors border border-gray-200"
           >
-            Sign in
+            Get started free
           </Link>
         </div>
 

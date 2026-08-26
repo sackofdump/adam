@@ -24,9 +24,19 @@ export default async function DashboardPage() {
     }),
   ]);
 
+  const isDemo = session.user.email === "demo@tryadam.com";
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+      {isDemo && (
+        <div className="bg-orange-500 text-white text-sm text-center py-2 px-4 font-medium">
+          You&apos;re viewing demo data for Riverside HVAC &amp; Plumbing — a sample small business.{" "}
+          <a href="/auth/signup" className="underline font-semibold">
+            Create your own account free →
+          </a>
+        </div>
+      )}
       <main className="flex-1 py-10 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
